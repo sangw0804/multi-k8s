@@ -43,6 +43,7 @@ class Fib extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
+    if (isNaN(parseInt(this.state.index))) return alert('pls enter integer only!!');
 
     await axios.post('api/values', {
       index: this.state.index
